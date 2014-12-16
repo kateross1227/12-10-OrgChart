@@ -32,4 +32,14 @@ public class Manager extends Employee {
   public void setDepartment(String dept) {
     department = dept;
   }
+  
+  public boolean equals (Object obj) {
+    if (obj instanceof Manager) {
+      Manager other = (Manager) obj;
+      return this.getFirstName() == other.getFirstName() && this.getLastName() == other.getLastName() && this.getAge() == other.getAge() && this.getWage() == other.getWage() && this.getHours() == other.getHours() && this.getJobTitle() == other.getJobTitle() && this.getDepartment() == other.getDepartment(); 
+    }
+    else {
+      return false;
+    }
+  }
 }

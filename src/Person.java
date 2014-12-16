@@ -10,6 +10,8 @@ public class Person {
     age = 0;
   }
   
+
+  
   public Person(String F, String L, int a) {
     nameF = F;
     nameL = L;
@@ -34,5 +36,15 @@ public class Person {
   
   public void recordBirthday() {
     age++;
+  }
+
+  public boolean equals (Object obj) {
+    if (obj instanceof Person) {
+      Person other = (Person) obj;
+      return this.getFirstName() == other.getFirstName() && this.getLastName() == other.getLastName() && this.getAge() == other.getAge();
+    }
+    else {
+      return false;
+    }
   }
 }

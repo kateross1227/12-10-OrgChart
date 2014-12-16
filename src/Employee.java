@@ -55,4 +55,14 @@ public class Employee extends Person {
   public void setManager(Manager newManager) {
     manager = newManager;
   }
+  
+  public boolean equals (Object obj) {
+    if (obj instanceof Employee) {
+      Employee other = (Employee) obj;
+      return this.getFirstName() == other.getFirstName() && this.getLastName() == other.getLastName() && this.getAge() == other.getAge() && this.getWage() == other.getWage() && this.getHours() == other.getHours() && this.getJobTitle() == other.getJobTitle(); 
+    }
+    else {
+      return false;
+    }
+  }
 }

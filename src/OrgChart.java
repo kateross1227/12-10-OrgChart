@@ -12,5 +12,27 @@ public class OrgChart {
     e3.setManager(m2);
     System.out.println(m1.toString() + "\n\t" + e1.toString() + "\n\t" + e2.toString());
     System.out.println(m2.toString() + "\n\t" + e3.toString());
+    
+    printInfo(Person());
+    
   }
+  
+    public static void printInfo(Person p) {
+      if (p instanceof Manager) {
+        Manager m = (Manager) p;
+        System.out.println("Manager: " + m.getLastName() + ", " + m.getFirstName());
+        System.out.println("\tAge:" + m.getAge() + "Job Title: " + m.getJobTitle());
+        System.out.println("\t\tYearly Salary: $" + m.getYearlySalary());
+      }
+      else if (p instanceof Employee) {
+        Employee e = (Employee) p;
+        System.out.println("Employee: " + e.getLastName() + ", " + e.getFirstName());
+        System.out.println("\tAge:" + e.getAge() + "Job Title: " + e.getJobTitle());
+        System.out.println("\t\tYearly Salary: $" + e.getYearlySalary());
+      }
+      else {
+        System.out.println("Person: " + p.getLastName() + ", " + p.getFirstName());
+        System.out.println("\tAge:" + p.getAge());
+      }
+    }
 }
